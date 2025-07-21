@@ -7,12 +7,51 @@
     <title>LAB 2</title>
   </head>
   <body>
-    <h1>Lab 2</h1>
+    <header>
+      <h1>Lab 2</h1>
+      <span class="purchases">Корзина🧺 <span id="counter-value">0</span></span>
+    </header>
     <p style="font-size: 30px">Task 1-2</p>
     <div class="t-1">
       <p class="like-btn" id="task-1">👍</p>
       <p class="dislike-btn" id="task-2">👎</p>
     </div>
+    <p style="font-size: 30px">Task 3</p>
+    <div class="images">
+      <div class="image-1">
+        <img src="public/image.png" alt="Картинка" /><button
+          onclick="addInto()"
+          id="img"
+        >
+          +
+        </button>
+      </div>
+      <div class="image-2">
+        <img src="public/image.png" alt="Картинка" /><button
+          onclick="addInto()"
+          id="img"
+        >
+          +
+        </button>
+      </div>
+      <div class="image-3">
+        <img src="public/image.png" alt="Картинка" /><button
+          onclick="addInto()"
+          id="img"
+        >
+          +
+        </button>
+      </div>
+    </div>
+
+    <p style="font-size: 30px">Task 4</p>
+
+    <button onclick="sortUp()">По возрастанию</button>
+    <button onclick="sortDown()">По убыванию</button>
+    <button onclick="sortDefault()">Изначальное состояние</button>
+
+    <ul id="output"></ul>
+
     <script src="main.js"></script>
   </body>
 </html>

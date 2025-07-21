@@ -36,3 +36,31 @@ body {
   background-color: #f44336;
   color: white;
 }
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.purchases {
+  margin: 20px;
+  font-size: 30px;
+}
+
+.image-1 img,
+.image-2 img,
+.image-3 img {
+  width: 160px;
+  height: 90px;
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+#output {
+  font-size: 30px;
+  margin: 30px;
+}
