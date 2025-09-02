@@ -4,53 +4,43 @@ const likeButton = document.getElementById('task-1');
 const disLikeButton = document.getElementById('task-2');
 
 likeButton.addEventListener('click', () => {
-  if (disLikeButton.classList.contains('active')) {
-    disLikeButton.classList.remove('active');
-    console.log('Кнопка 2 деактивирована!');
-  }
-
-  likeButton.classList.toggle('active');
-
-  if (likeButton.classList.contains('active')) {
-    console.log('Кнопка 1 активирована!');
+  const disLikeButtonState = disLikeButton.hasAttribute('active');
+  if (disLikeButtonState) {
+    likeButton.toggleAttribute('active');
+    disLikeButton.toggleAttribute('active');
   } else {
-    console.log('Кнопка 1 деактивирована!');
+    likeButton.toggleAttribute('active');
   }
 });
 
 disLikeButton.addEventListener('click', () => {
-  if (likeButton.classList.contains('active')) {
-    likeButton.classList.remove('active');
-    console.log('Кнопка 1 деактивирована!');
-  }
-
-  disLikeButton.classList.toggle('active');
-
-  if (disLikeButton.classList.contains('active')) {
-    console.log('Кнопка 2 активирована!');
-    likeButton.removeEventListener('click', () => {});
+  const likeButtonState = likeButton.hasAttribute('active');
+  if (likeButtonState) {
+    likeButton.toggleAttribute('active');
+    disLikeButton.toggleAttribute('active');
   } else {
-    console.log('Кнопка 2 деактивирована!');
+    disLikeButton.toggleAttribute('active');
   }
 });
 
 // Task 3
-
-const item = document.getElementById('img');
 let counter = 0;
 
 function addInto() {
-  counter++;
+  counter += 1;
   document.getElementById('counter-value').textContent = counter;
-  console.log('Товар добавлен в корзину!');
 }
+
+const buttons = document.querySelectorAll('.img');
+buttons.forEach((button) => {
+  button.addEventListener('click', addInto);
+});
 
 // Task 4
 
-let arr = [2, 4, 3, 5, 1];
-let arr2 = arr.slice();
-let outputDiv = document.getElementById('output');
-let listItems = outputDiv.querySelectorAll('li');
+const arr = [2, 4, 3, 5, 1];
+const arr2 = arr.slice();
+const outputDiv = document.getElementById('output');
 arr.forEach((item) => {
   const li = document.createElement('li');
   li.textContent = item;
@@ -87,4 +77,16 @@ function sortDefault() {
   });
 }
 
+const buttonUp = document.getElementById('btn-1');
+const buttonDown = document.getElementById('btn-2');
+const buttonDefault = document.getElementById('btn-3');
+
+buttonUp.addEventListener('click', sortUp);
+buttonDown.addEventListener('click', sortDown);
+buttonDefault.addEventListener('click', sortDefault);
+
 // Task 5
+document.addEventListener('click', (event) => {
+  const coordDisplay = document.getElementById('location');
+  coordDisplay.textContent = `X = ${event.clientX}, Y = ${event.clientY}`;
+});

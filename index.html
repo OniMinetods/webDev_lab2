@@ -19,26 +19,17 @@
     <p style="font-size: 30px">Task 3</p>
     <div class="images">
       <div class="image-1">
-        <img src="public/image.png" alt="Картинка" /><button
-          onclick="addInto()"
-          id="img"
-        >
+        <img src="public/image.png" alt="Картинка" /><button class="img">
           +
         </button>
       </div>
       <div class="image-2">
-        <img src="public/image.png" alt="Картинка" /><button
-          onclick="addInto()"
-          id="img"
-        >
+        <img src="public/image.png" alt="Картинка" /><button class="img">
           +
         </button>
       </div>
       <div class="image-3">
-        <img src="public/image.png" alt="Картинка" /><button
-          onclick="addInto()"
-          id="img"
-        >
+        <img src="public/image.png" alt="Картинка" /><button class="img">
           +
         </button>
       </div>
@@ -46,11 +37,14 @@
 
     <p style="font-size: 30px">Task 4</p>
 
-    <button onclick="sortUp()">По возрастанию</button>
-    <button onclick="sortDown()">По убыванию</button>
-    <button onclick="sortDefault()">Изначальное состояние</button>
+    <button id="btn-1">По возрастанию</button>
+    <button id="btn-2">По убыванию</button>
+    <button id="btn-3">Изначальное состояние</button>
 
     <ul id="output"></ul>
+
+    <p style="font-size: 30px">Task 5</p>
+    <div id="location"></div>
 
     <script src="main.js"></script>
   </body>
